@@ -10,11 +10,11 @@ public  class Program
        
 
         SqlConnection connection = new SqlConnection(connectionString);
-        //string Create = "Create table Employeess(EmployeeId int primary key identity(1,1),Name varchar(50),Address varchar(20),Salary decimal(10,2),JoinDate Date,City varchar(20) );";
-        //SqlCommand command = new SqlCommand(Create, connection);
-        //connection.Open();
-        //command.ExecuteNonQuery();
-        //Console.WriteLine("successfully table is created");
+        string Create = "Create table Employeess(EmployeeId int primary key identity(1,1),Name varchar(50),Address varchar(20),Salary decimal(10,2),JoinDate Date,City varchar(20) );";
+        SqlCommand command = new SqlCommand(Create, connection);
+        connection.Open();
+        command.ExecuteNonQuery();
+        Console.WriteLine("successfully table is created");
 
         //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
 
@@ -49,7 +49,7 @@ public  class Program
         //sqlCommand.Parameters.AddWithValue("@ID", 1);
         //sqlCommand.ExecuteNonQuery();
         //Console.WriteLine("Deleted!");
-        
+
 
         connection.Close(); 
 
