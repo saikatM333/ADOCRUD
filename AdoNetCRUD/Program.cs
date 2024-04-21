@@ -26,29 +26,29 @@ public  class Program
         //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
 
 
-        string UpdateTables = @"update Employeess set Name='sai' where EmployeeId = 1  ";
+        //string UpdateTables = @"update Employeess set Name='sai' where EmployeeId = 1  ";
 
-        SqlCommand command = new SqlCommand(UpdateTables, connection);
+        //SqlCommand command = new SqlCommand(UpdateTables, connection);
+        //connection.Open();
+        //command.ExecuteNonQuery();
+        //Console.WriteLine("successfully updated the value ");
+        string display = "select * from Employee1";
+        SqlCommand cmd = new SqlCommand(display, connection);
         connection.Open();
-        command.ExecuteNonQuery();
-        Console.WriteLine("successfully updated the value ");
-        //string display = "select * from Employee1";
-        //SqlCommand cmd = new SqlCommand(display, connection );
-        //connection.Open();
-        //SqlDataReader reader = cmd.ExecuteReader();
+        SqlDataReader reader = cmd.ExecuteReader();
 
 
-        //while (reader.Read())
-        //{
-        //    Console.WriteLine($" Id : {reader["EmployeeId"]},Name :{reader["Name"]},Address : {reader["Address"]},Salary : {reader["Salary"]},Joindate: {reader["JoinDate"]},City : {reader["City"]}");
+        while (reader.Read())
+        {
+            Console.WriteLine($" Id : {reader["EmployeeId"]},Name :{reader["Name"]},Address : {reader["Address"]},Salary : {reader["Salary"]},Joindate: {reader["JoinDate"]},City : {reader["City"]}");
 
-        //}
-        //    string deleteData = "delete Employeess where EmployeeId = @ID";
-        //SqlCommand sqlCommand = new(deleteData, connection);
-        //connection.Open();
-        //sqlCommand.Parameters.AddWithValue("@ID", 1);
-        //sqlCommand.ExecuteNonQuery();
-        //Console.WriteLine("Deleted!");
+        }
+        string deleteData = "delete Employeess where EmployeeId = @ID";
+        SqlCommand sqlCommand = new(deleteData, connection);
+        connection.Open();
+        sqlCommand.Parameters.AddWithValue("@ID", 1);
+        sqlCommand.ExecuteNonQuery();
+        Console.WriteLine("Deleted!");
 
 
         connection.Close(); 
