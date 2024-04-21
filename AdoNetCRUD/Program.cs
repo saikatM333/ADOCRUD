@@ -16,22 +16,22 @@ public  class Program
         //command.ExecuteNonQuery();
         //Console.WriteLine("successfully table is created");
 
-        string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
+        //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
 
-        SqlCommand command = new SqlCommand(InsertTables, connection);
-        connection.Open();
-        command.ExecuteNonQuery();
-        Console.WriteLine("successfully inserted into table ");
+        //SqlCommand command = new SqlCommand(InsertTables, connection);
+        //connection.Open();
+        //command.ExecuteNonQuery();
+        //Console.WriteLine("successfully inserted into table ");
 
         //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
 
 
-        //string UpdateTables = @"update Employeess set Name='sai' where EmployeeId = 1  ";
+        string UpdateTables = @"update Employeess set Name='sai' where EmployeeId = 1  ";
 
-        //SqlCommand command = new SqlCommand(UpdateTables, connection);
-        //connection.Open();
-        //command.ExecuteNonQuery();
-        //Console.WriteLine("successfully inserted into table ");
+        SqlCommand command = new SqlCommand(UpdateTables, connection);
+        connection.Open();
+        command.ExecuteNonQuery();
+        Console.WriteLine("successfully updated the value ");
         //string display = "select * from Employee1";
         //SqlCommand cmd = new SqlCommand(display, connection );
         //connection.Open();
