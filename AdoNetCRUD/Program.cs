@@ -10,18 +10,18 @@ public  class Program
        
 
         SqlConnection connection = new SqlConnection(connectionString);
-        string Create = "Create table Employeess(EmployeeId int primary key identity(1,1),Name varchar(50),Address varchar(20),Salary decimal(10,2),JoinDate Date,City varchar(20) );";
-        SqlCommand command = new SqlCommand(Create, connection);
-        connection.Open();
-        command.ExecuteNonQuery();
-        Console.WriteLine("successfully table is created");
-
-        //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
-
-        //SqlCommand command = new SqlCommand(InsertTables, connection);
+        //string Create = "Create table Employeess(EmployeeId int primary key identity(1,1),Name varchar(50),Address varchar(20),Salary decimal(10,2),JoinDate Date,City varchar(20) );";
+        //SqlCommand command = new SqlCommand(Create, connection);
         //connection.Open();
         //command.ExecuteNonQuery();
-        //Console.WriteLine("successfully inserted into table ");
+        //Console.WriteLine("successfully table is created");
+
+        string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
+
+        SqlCommand command = new SqlCommand(InsertTables, connection);
+        connection.Open();
+        command.ExecuteNonQuery();
+        Console.WriteLine("successfully inserted into table ");
 
         //string InsertTables = @"insert into Employeess values ('saikat' , 'bangalore', 70000.00 , null,'bangalore'); ";
 
